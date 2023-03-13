@@ -13,5 +13,15 @@ int main() {
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
     printf("Terminal size : %dx%d\n", w.ws_row, w.ws_col);
 
+	int color;
+	for (color = 40; color < 48; color++) {
+		printf("\e[0;%dm    \e[0m", color);
+	}
+	printf("\n");
+    for (color = 100; color < 108; color++) {
+        printf("\e[0;%dm    \e[0m", color);
+    }
+    printf("\n");
+
     return 0;
 }
